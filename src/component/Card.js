@@ -4,12 +4,12 @@ import { FaEnvelopeOpen, FaPhone, FaMap } from 'react-icons/fa'
 
 
 const Card = ({item}) => {
-const register = (item.registered.date).slice(0,(item.registered.date).indexOf("T"))
+const register = (item.registered.date).slice(0,(item.registered.date).indexOf("T"))//
     return (
         <div className="card">
             <div className="header">
                 <img id="img" src={item.picture.large} alt={item.name.first}/>
-                <h2 id="name">{item.name.title}. {item.name.first} {item.name.last}</h2>
+                <h3 id="name">{item.name.title}. {item.name.first} {item.name.last}</h3>
             </div>
             <div className="infos">
                 <FaEnvelopeOpen />

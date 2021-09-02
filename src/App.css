@@ -1,17 +1,14 @@
 .App {
-position: relative;
   width: 100%;
   height:100vh;
   display:flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  margin-top:100px;
 }
 
 #btn{
-  position: absolute;
-  left:580px;
-  top:630px;
+  margin-top: 50px;
   width:120px;
   height: 50px;
   background-color: rgba(66, 167, 207, 0.89);
