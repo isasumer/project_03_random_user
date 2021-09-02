@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from "axios";
+import React, {useState, useEffect} from "react"
+import Card from "./component/Card"
+import "./App.css"
 
-function App() {
+const App = () => {
+  const [itemList, setItemList] = useState ([]);
+
+  useEffect(() => {
+    console.log('object :>> ', itemList);
+    axios.get("https://randomuser.me/api/").then((res)=>setItemList(res.data.results))
+  }, [])
+
+  const handleClick = () => {
+    return (
+    axios.get("https://randomuser.me/api/").then((res)=>setItemList(res.data.results))
+    )} 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+      <div className="App">
+        {itemList.map((item)=>(
+          <Card key={item.phone} item ={item}/>
+        ))}
+        <div>
+        <button id="btn" onClick= {handleClick}>Refresh Page</button>
+        </div>
+      </div>
+
+  )
+} 
 
 export default App;
+
+
+
+
+
