@@ -7,7 +7,7 @@ const App = () => {
   const [itemList, setItemList] = useState ([]);
 
   useEffect(() => {
-    console.log('object :>> ', itemList);
+  
     axios.get("https://randomuser.me/api/").then((res)=>setItemList(res.data.results))
   }, [])
 
